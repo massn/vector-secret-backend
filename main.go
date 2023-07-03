@@ -18,10 +18,9 @@ type ValErr struct {
 }
 
 func main() {
-	if len(os.Args) < 2 {
-		panic("No secrets provided")
-	}
-	secretsInfo, err := toSecretsInfo(os.Args[1])
+	var stdin string
+	fmt.Scan(&stdin)
+	secretsInfo, err := toSecretsInfo(stdin)
 	if err != nil {
 		panic(err)
 	}
